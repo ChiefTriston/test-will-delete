@@ -1,7 +1,0 @@
-torch>=1.10.0
-torchaudio
-numpy
-pyannote.core>=4.0
-pyannote.metrics
-speechbrain
-resemblyzer
