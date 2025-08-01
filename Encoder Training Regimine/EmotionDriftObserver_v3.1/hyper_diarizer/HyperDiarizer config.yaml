@@ -1,0 +1,22 @@
+hyperdiazer:
+  # slicing parameters
+  min_slice_dur:         1.5     # seconds
+  max_slice_dur:         6.0     # seconds
+  min_merge_gap:         0.2     # seconds
+  padding:               0.1     # seconds around each slice
+  silence_pad_ms:        100     # milliseconds
+
+  # SNR filter
+  snr_thresh:            5.0     # dB
+
+  # Overlap detection
+  overlap_energy_thresh: 0.3
+  sim_overlap_thresh:    0.5
+
+  # Clustering
+  voiceprint_thresh:     0.6
+  memory_size:           10
+
+  # Performance
+  compute_type:         "float16"
+  batch_size:            1
