@@ -17,6 +17,7 @@ from .embedding import extract_emb
 from .cluster import time_aware_sim, temporal_cluster
 from .reid import ReIDMemory as ReidMemory
 from .audio_rebuilder import reconstruct_audio
+from .overlap import detect_overlaps
 import logging
 from logging.handlers import RotatingFileHandler
 from pyannote.core import Annotation
