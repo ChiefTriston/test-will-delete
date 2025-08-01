@@ -1,0 +1,124 @@
+# config.yaml
+
+# Global settings
+global:
+  raw_audio_dir:    "C:\\Users\\trist\\OneDrive\\Documents\\Remastered TTS Final Version\\TTS Core Remastered\\reference_encoder\\data\\Encoder Training Regimine\\Raw Audio"
+  output_base:      "C:\\Users\\trist\\OneDrive\\Documents\\Remastered TTS Final Version\\TTS Core Remastered\\reference_encoder\\data\\Encoder Training Regimine\\output"
+  github_repo_path: "C:\\Users\\trist\\OneDrive\\Documents\\Remastered TTS Final Version\\TTS Core Remastered"
+  github_target_dir: "reference_encoder/Encoder Training Regimine/"
+  use_gpu:          false
+  sample_rate:      22050
+  plot_map_dir:     "plot_maps"
+
+# Diarization settings
+diarization:
+  model:        "large-v2"
+  batch_size:   16
+  compute_type: "float32"
+  chunk_seconds: 600
+
+# Prosody extraction settings
+prosody:
+  extract_freq: 50
+  n_layers:     4
+  cond_dim:     256
+  use_amp:      false
+
+# Drift detection settings
+drift:
+  thresh_pitch:     1.0
+  thresh_energy:    1.0
+  buffer_zone:      0.2
+  smoothing_window: 5
+  smoothing_order:  2
+
+# Transcription settings
+transcription:
+  model:        "large-v2"
+  vad_thresh:   0.5
+  frame_ms:     30
+  compute_type: "float32"
+
+# Alignment settings
+alignment:
+  weights:
+    silence: 0.2
+    prosody: 0.3
+    polarity: 0.3
+    vad:     0.2
+  fade_buffer:   0.5
+  max_slice_len: 10.0
+
+# Tier-1 tagging settings
+tier1:
+  auto_accept_conf: 0.93
+  min_conf:         0.90
+  compound_pos:     0.05
+  compound_neg:    -0.05
+  confidence_thresh: 0.1
+
+# Tier-2 tagging settings
+tier2:
+  auto_accept_conf: 0.90
+  min_conf:         0.65
+  negation_weight:  1.0
+
+# Anomaly detection settings
+anomaly:
+  hallucination_min_len: 5
+  repetition_thresh:    0.5
+  outlier_std_mult:     2.0
+
+# Arc classification settings
+arc:
+  num_clusters: 10
+
+# Plot map settings
+plot_map:
+  num_beats:                0
+  beats_per_arc:            8
+  summarizer_model:         facebook/bart-large-cnn
+  max_summary_length:       60
+  min_summary_length:       20
+  arc_confidence_threshold: 0.7
+
+# HyperDiazer settings
+hyperdiazer:
+  # slicing parameters
+  min_slice_dur:         1.5
+  max_slice_dur:         6.0
+  min_merge_gap:         0.2
+  padding:               0.1
+  silence_pad_ms:        100
+
+  # SNR filter
+  snr_thresh:            5.0
+
+  # Overlap detection
+  overlap_energy_thresh: 0.3
+  sim_overlap_thresh:    0.5
+
+  # Clustering
+  voiceprint_thresh:     0.6
+  memory_size:           10
+
+  # Performance
+  compute_type:         "float16"
+  batch_size:            1
+
+# Observer UI settings (unused)
+observer: {}
+
+# Git sync settings
+git_sync:
+  commit_message: "Emotion tags update"
+
+# Dynamic learning settings
+dynamic_learning:
+  data_root:           "C:\\Users\\trist\\OneDrive\\Documents\\Remastered TTS Final Version\\TTS Core Remastered\\reference_encoder\\data\\Encoder Training Regimine\\tier1_data"
+  validation_set:      "validation_set.json"
+  sample_frac:         0.05
+  max_samples:         500
+  alert_drop_threshold: 0.05
+
+

@@ -1,0 +1,13 @@
+Metadata-Version: 2.4
+Name: hyper_diarizer
+Version: 0.1.0
+Summary: HyperDiazer speaker diarization module
+Requires-Dist: torch>=1.10.0
+Requires-Dist: torchaudio
+Requires-Dist: numpy
+Requires-Dist: pyannote.core>=4.0
+Requires-Dist: pyannote.metrics
+Requires-Dist: speechbrain
+Requires-Dist: resemblyzer
+Dynamic: requires-dist
+Dynamic: summary
